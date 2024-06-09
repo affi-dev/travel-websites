@@ -29,7 +29,7 @@
 
       </ul>
 
-      <label for='bars' class="icon-bars"><i class="ri-bar-chart-2-fill"></i></label>
+    <label for='bars' class="icon-bars"><i class="ri-bar-chart-2-fill"></i></label>
     </div>
   </nav>
 
@@ -190,7 +190,35 @@
 
   </div>
 
- 
+  <section class="gallery" id="gallery">
+    <div class="heading">
+      <h1 class="title">Our Album </h1>
+      <p class="subtitle">We have best Photographers wait you for take your personnel pictures!</p>
+    </div>
+    <div class="items">
+
+      <div class="card">
+        <img src="trip pic.avif" alt="" srcset="">
+      </div>
+      <div class="card">
+        <img src="album-2.jpg" alt="" srcset="">
+      </div>
+      <div class="card">
+        <img src="album-3.jpg" alt="" srcset="">
+      </div>
+      <div class="card">
+        <img src="album-4.jpg" alt="" srcset="">
+      </div>
+      <div class="card">
+        <img src="album-5.jpg" alt="" srcset="">
+      </div>
+      <div class="card">
+        <img src="album-6.jpg" alt="" srcset="">
+      </div>
+
+    </div>
+
+  </section>
 
 
   <section class="contact" id="contact">
@@ -207,17 +235,17 @@
             <div class="card">
               <div class="line">
                 <span><i class="ri-phone-line"></i></span>
-                <h4>Call us</h4>
+                <h6>Call us</h6>
               </div>
 
               <p>+91 9810539672</p>
             </div>
             <div class="card">
               <div class="line">
-                <span><i class="ri-mail-line"></i></span>
-                <h4>Mail us</h4>
+                <span><i class="ri-instagram-fill"></i></span>
+                <h6>instagram</h6>
               </div>
-              <p>afnanshams.coding@gmail.com</p>
+             <p>_affidev</p>
             </div>
           </div>
         </div>
@@ -326,7 +354,7 @@ h4 {
     left: 0;
     right: 0;
     width: 100%;
-    background-color: transparent;
+    background-color: black;
     z-index: 1000;
 }
 
@@ -359,7 +387,7 @@ h4 {
     font-size: 22px;
     line-height: 22px;
     text-transform: capitalize;
-    color: #fff;
+    color: #f35405;
     border-top: 4px solid #fff;
 }
 
@@ -385,6 +413,12 @@ h4 {
     border-top: 1px solid #f35405;
 }
 
+.about{
+    background: linear-gradient(to top, #00040b, #00040bbb), url(indiaflag.gif);
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: cover
+}
 
 
 .next img {
@@ -821,6 +855,15 @@ section .heading .subtitle {
 }
 
 
+@keyframes expandContract {
+    0%, 100% {
+        grid-column: span 1;
+    }
+    10%, 30% {
+        grid-column: span 2;
+    }
+}
+
 .gallery {
     background-color: var(--primary-color);
 }
@@ -832,10 +875,8 @@ section .heading .subtitle {
     position: relative;
     overflow: hidden;
     max-height: 450px;
-    overflow: hidden;
     padding: 1rem 0rem;
 }
-
 
 .gallery .items .card {
     grid-column: span 1;
@@ -845,6 +886,15 @@ section .heading .subtitle {
     position: relative;
     cursor: pointer;
     transition: all 1s;
+    animation: expandContract 12s infinite;
+}
+
+.gallery .items .card:nth-child(2) {
+    animation-delay: 4s;
+}
+
+.gallery .items .card:nth-child(3) {
+    animation-delay: 8s;
 }
 
 .gallery .items .card::after {
@@ -856,11 +906,6 @@ section .heading .subtitle {
     top: 0;
     background: linear-gradient(to top, #010101, transparent);
     z-index: 0;
-}
-
-.gallery .items .card:hover {
-    grid-column: span 2;
-
 }
 
 .gallery .items .card img {
@@ -1119,10 +1164,17 @@ footer .rights a {
         transform: rotate(90deg);
     }
 
-    .icon-bars i {
-        color: #fff;
-        font-size: 20px;
-    }
+    .icon-bars {
+    display: flex;
+    justify-content: center;
+}
+
+.icon-bars i {
+    color: #fff;
+    font-size: 20px;
+}
+
+
 
     .nav-bar .navigation {
         position: fixed;
